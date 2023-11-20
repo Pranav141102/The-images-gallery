@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Responsive Image Gallery</title>
+</head>
+
+<body>
+    <header>
+        <h1>Image Gallery</h1>
+        <button class="upload" onclick="document.getElementById('imageInput').click()">Upload Image</button>
+        <div>
+            <button class="left" onclick="openLoginModal()">Login</button>
+            <button class="left" onclick="openSignupModal()">Sign Up</button>
+        </div>
+    </header>
+
+    <div class="gallery-container">
+        <input type="file" id="imageInput" accept="image/*" style="display:none;" />
+
+        <!-- Pre-uploaded images -->
+        <div id="preUploadedImages" class="image-gallery">
+            <img src="./images/camera-8191564_1280.jpg" alt="Pre-uploaded Image 1" class="image">
+            <img src="./images/camera-8246764_1280.jpg" alt="Pre-uploaded Image 2" class="image">
+            <img src="./images/flowers-8392758_1280.jpg" alt="Pre-uploaded Image 2" class="image">
+            <img src="./images/camera-8246764_1280.jpg" alt="Pre-uploaded Image 2" class="image">
+            <img src="./images/starry-sky-8199764_1280.jpg" alt="Pre-uploaded Image 2" class="image">
+            <img src="./images/deer-8164879_1280.jpg" alt="Pre-uploaded Image 2" class="image">
+            <!-- Add more pre-uploaded images as needed -->
+        </div>
+
+        <!-- Uploaded images will be displayed here -->
+        <div id="imageGallery" class="image-gallery"></div>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Login</h2>
+            <form id="loginForm" class="login-form">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="button" onclick="login()">Login</button>
+                <p><a href="#">Forgot Password?</a></p>
+                <p class="toggle-link" onclick="toggleForm()">Don't have an account? Sign Up</p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Sign Up</h2>
+            <form id="signupForm" class="signup-form">
+                <label for="signupEmail">Email:</label>
+                <input type="email" id="signupEmail" name="signupEmail" required>
+                <label for="signupPassword">Password:</label>
+                <input type="password" id="signupPassword" name="signupPassword" required>
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+                <button type="button" onclick="signup()">Sign Up</button>
+                <p class="toggle-link" onclick="toggleForm()">Already have an account? Login</p>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
